@@ -25,14 +25,14 @@
         <a class="navbar-brand" href="http://data.taipei/opendata/datalist/datasetMeta?oid=6556e1e8-c908-42d5-b984-b3f7337b139b">
           <img alt="Brand" src="http://www.pacific.com.tw/Images/logo_mrt.gif">
         </a>
-        <h4 id="navTop" class="navbar-text">臺北市公車到站即時資訊</h4>
+        <h4 id="navTop" class="navbar-text">臺北捷運到站紀錄</h4>
     </nav>
 
     <br>
     <br>
-    <h1>臺北市公車到站即時資訊</h1>
+    <h1>臺北捷運到站紀錄</h1>
 
-    <i id="loading" class="fa fa-refresh fa-spin fa-5x"></i>
+    <i id="loading" class="fa fa-cog fa-spin fa-5x"></i>
 
     <div id="content" class="container"></div>
 
@@ -48,9 +48,9 @@
           console.log(err);
         }
         else {
-          var XMLstationList = data.result.results;
-          var HTMLstationList = XMLstationList.map(function(station) {
-            var HTMLString = "<h2>"+"進站："+station.id+"</h2>";
+          var JSONstationList = data.result.results;
+          var HTMLstationList = JSONstationList.map(function(station) {
+            var HTMLString = "<h2>"+"車站名稱："+station.Station+"</h2>";
             var attributes = "";
             for (var key in station) {
               if(key!="_id"){
